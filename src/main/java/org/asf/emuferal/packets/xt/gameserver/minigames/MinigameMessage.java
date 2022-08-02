@@ -8,6 +8,7 @@ import org.asf.emuferal.networking.gameserver.GameServer;
 import org.asf.emuferal.networking.smartfox.SmartfoxClient;
 import org.asf.emuferal.packets.xt.IXtPacket;
 import org.asf.emuferal.players.Player;
+import org.asf.emuferal.minigames.KinoGames;
 import org.asf.emuferal.minigames.TwiggleBuilders;
 
 public class MinigameMessage implements IXtPacket<MinigameMessage> {
@@ -51,6 +52,11 @@ public class MinigameMessage implements IXtPacket<MinigameMessage> {
 		switch (plr.levelID) {
 			case 4111: {
 				TwiggleBuilders.HandleMessage(plr, command, data);
+				break;
+			}
+			case 12174:
+			case 7789: {
+				KinoGames.HandleMessage(plr, command, data);
 				break;
 			}
 		}

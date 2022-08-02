@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.asf.emuferal.data.XtReader;
 import org.asf.emuferal.data.XtWriter;
+import org.asf.emuferal.minigames.KinoGames;
 import org.asf.emuferal.minigames.TwiggleBuilders;
 import org.asf.emuferal.networking.smartfox.SmartfoxClient;
 import org.asf.emuferal.packets.xt.IXtPacket;
@@ -50,6 +51,12 @@ public class MinigameJoin implements IXtPacket<MinigameJoin> {
 			case 4111: {
 				isMinigameSupported = true;
 				TwiggleBuilders.OnJoin(plr);
+				break;
+			}
+			case 12174:
+			case 7789: {
+				isMinigameSupported = true;
+				KinoGames.OnJoin(plr);
 				break;
 			}
 			default: {
